@@ -3,34 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#081323">
-  <meta name="description" content="Pulso Orbital: defensa incremental infinita con oleadas generadas y jefes.">
-  <title>Pulso Orbital · Beta 0.3.1</title>
+  <meta name="theme-color" content="#14120f">
+  <meta name="description" content="Pulso Orbital: defensa arcade por oleadas infinitas. Apunta, elige mejoras y vence a los jefes. Sin conexión.">
+  <title>Pulso Orbital · Beta 0.4.0</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <main class="app" id="app">
-    <canvas id="arena" aria-label="Arena de Pulso Orbital: apunta para defender el núcleo"></canvas>
-    <div class="vignette" aria-hidden="true"></div>
+  <main class="cabinet" id="app">
+    <canvas id="arena" aria-label="Arena de Pulso Orbital: arrastra para apuntar y defender el núcleo"></canvas>
+    <div class="danger-edge" aria-hidden="true"></div>
 
     <header class="hud" id="hud">
-      <div class="hud__brand"><span class="brand-mark" aria-hidden="true">◈</span><span>PULSO <strong>ORBITAL</strong></span></div>
-      <div class="hud__stats" aria-live="off">
-        <span id="waveLabel">OLEADA 1 · ∞</span>
-        <span id="scoreLabel">0000 PT</span>
-      </div>
-      <div class="hud__pattern" id="patternLabel">FORMACIÓN MIXTA</div>
-      <div class="hud__bottom">
-        <div class="hull"><span>NÚCLEO</span><div class="hull__bar"><i id="hullFill"></i></div><b id="hullLabel">5/5</b></div>
-        <div class="hud__actions">
-          <button id="soundButton" class="icon-button" type="button" aria-label="Activar sonido" title="Sonido">♪</button>
-          <button id="pauseButton" class="icon-button" type="button" aria-label="Pausar juego" title="Pausar">Ⅱ</button>
+      <div class="hud__top">
+        <div class="hud__score" id="scoreDisplay"></div>
+        <div class="hud__wave"><small>Oleada</small><div id="waveDisplay"></div></div>
+        <div class="hud__buttons">
+          <button id="soundButton" class="key" type="button" aria-pressed="false" aria-label="Activar sonido"></button>
+          <button id="pauseButton" class="key" type="button" aria-label="Pausar el juego"></button>
         </div>
       </div>
+      <div class="hud__bottom">
+        <div class="integrity" id="integrity"></div>
+        <div class="combo" id="combo" hidden><b id="comboMult">×2</b><span class="combo__bar"><i id="comboBar"></i></span></div>
+      </div>
+      <div class="hud__formation" id="formation"></div>
     </header>
 
-    <div class="aim-hint" id="aimHint" aria-hidden="true"><span class="aim-hint__dot"></span> ARRASTRA PARA APUNTAR <span class="aim-hint__dot"></span></div>
-    <section class="overlay" id="overlay" aria-live="polite"></section>
+    <div class="banner" id="banner" role="status" aria-live="polite"></div>
+    <div class="coach" id="coach" aria-live="polite"></div>
+    <section class="overlay" id="overlay" hidden></section>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
   </main>
   <script type="module" src="./main.mjs"></script>

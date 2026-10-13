@@ -1,21 +1,98 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0c191c"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'"><title>Lumen · Guardianes del Bosque</title><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"></head>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1612">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+<title>Lumen · Guardianes del Bosque</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
-<header class="topbar"><a class="brand" href="#" aria-label="Lumen, inicio"><span class="brandmark">✧</span><span>LUMEN<small>GUARDIANES DEL BOSQUE</small></span></a><div class="topright"><span class="version">PRIMERA LUZ <b> / </b> 01</span><button id="sound" class="icon-button" aria-label="Activar sonido" aria-pressed="false">♪</button><button id="help" class="icon-button" aria-label="Cómo jugar">?</button></div></header>
+<div class="app">
+<header class="masthead" id="masthead">
+  <a class="brand" href="#" id="brand" aria-label="Lumen, inicio">
+    <span class="brand__mark" data-icon="lantern" data-size="26"></span>
+    <span class="brand__name">Lumen<small>Guardianes del bosque</small></span>
+  </a>
+  <div class="masthead__tools">
+    <button id="help" class="tool" type="button" aria-label="Cómo jugar" data-icon="help" data-size="24"></button>
+    <button id="settings" class="tool" type="button" aria-label="Ajustes" data-icon="gear" data-size="24"></button>
+  </div>
+</header>
 <main>
-<section id="home" class="home">
-  <div class="intro"><div class="eyebrow"><span></span> UNA ÚLTIMA SEMILLA. TODO UN MUNDO.</div><h1>Que la luz<br>encuentre <em>raíces.</em></h1><p>La niebla se acerca. Despierta a los guardianes,<br class="desktop-break"> traza tu defensa y protege el corazón del bosque.</p><div class="intro-actions"><button id="play" class="primary">Iniciar expedición <span>↗</span></button><span class="session-note">12 oleadas<br>Una semilla que proteger</span></div><div class="home-stats"><div><strong id="best">00</strong><span>MEJOR OLEADA</span></div><div><strong id="seeds">00</strong><span>SEMILLAS ETERNAS</span></div><div><strong>03</strong><span>DEFENSAS VIVAS</span></div></div></div>
-  <div class="world-preview"><div class="map-label"><span class="dot"></span> EL CLARO DE LAS LUCIÉRNAGAS <small>01 / BOSQUE UMBRÍO</small></div><canvas id="preview" width="1000" height="600" aria-label="Ilustración del bosque bioluminiscente y su sendero"></canvas><div class="preview-caption"><span>✦</span><p>Donde crece una luz,<br><strong>la oscuridad retrocede.</strong></p><span class="compass">N<br>✧</span></div></div>
-  <div class="bottom-grid"><article class="hero-card"><div class="portrait">❋</div><div><small>TU GUARDIANA</small><h2>Lyra, voz del bosque</h2><p>Muévela por el claro. Su pulso de luz daña a los invasores cercanos.</p></div><span class="card-index">01</span></article><article class="upgrade-card"><div><small>PROGRESO PERMANENTE</small><h2>Raíces de luz <span id="power-level">0 / 5</span></h2><p id="power-desc">+8% de daño por nivel en futuras expediciones.</p></div><button id="buy-power" class="secondary">Mejorar · 8 semillas</button></article></div>
+<section id="home" class="home" aria-label="Inicio">
+  <div class="home__intro plate">
+    <span class="kicker">Una última semilla. Todo un mundo.</span>
+    <h1>Que la luz encuentre <em>raíces.</em></h1>
+    <p class="lead">La niebla se acerca. Despierta a los guardianes, traza tu defensa y protege el corazón del bosque.</p>
+    <div class="actions">
+      <button id="continue" class="btn btn--paper btn--wide" type="button" hidden>Continuar expedición</button>
+      <button id="play" class="btn btn--lantern btn--wide" type="button">Iniciar expedición</button>
+    </div>
+    <dl class="labels">
+      <div><dt>Mejor oleada</dt><dd id="best">0</dd></div>
+      <div><dt>Semillas eternas</dt><dd id="seeds">0</dd></div>
+      <div><dt>Victorias</dt><dd id="wins">0</dd></div>
+    </dl>
+  </div>
+  <div class="home__world">
+    <canvas id="preview" aria-label="Ilustración del bosque con su sendero y tres defensas"></canvas>
+    <p class="caption">Donde crece una luz, la oscuridad retrocede.</p>
+  </div>
+  <div class="home__cards">
+    <article class="card">
+      <div class="badge" data-icon="sprig" data-size="30"></div>
+      <div><span class="kicker">Tu guardiana</span><h2>Lyra, voz del bosque</h2><p>Muévela por el claro. Su pulso de luz daña a los invasores cercanos.</p></div>
+    </article>
+    <article class="card roots">
+      <div class="roots__text"><span class="kicker">Progreso permanente</span><h2>Raíces de luz <span class="level" id="power-level">0 / 5</span></h2><p id="power-desc">+8% de daño por nivel en futuras expediciones.</p></div>
+      <button id="buy-power" class="btn btn--paper" type="button">Mejorar</button>
+    </article>
+  </div>
 </section>
-<section id="game" class="game" hidden>
- <div class="missionbar"><div><small>01 / EL CLARO</small><h2 id="wave-label">Prepara tu defensa</h2></div><div class="resources"><span title="Vida de la semilla">♡ <b id="health">20</b><small> VIDA</small></span><span title="Luz para construir durante esta partida">✦ <b id="gold">230</b><small> LUZ</small></span><button id="pause" class="icon-button" aria-label="Pausar partida">Ⅱ</button><button id="speed" class="icon-button" aria-label="Cambiar velocidad">1×</button></div></div>
- <div class="arena-wrap"><canvas id="arena" width="1000" height="600" tabindex="0" aria-label="Campo de batalla. Usa los botones de parcelas para construir, flechas para mover a Lyra y Q para lanzar su pulso."></canvas><div class="arena-tag">BOSQUE UMBRÍO <span>•</span> <span id="phase-label">PREPARACIÓN</span></div><div id="toast" class="toast" role="status" aria-live="polite">Selecciona una parcela para plantar tu primera defensa.</div></div>
- <div class="controls"><div class="selection"><small id="selection-label">CONSTRUYE TU DEFENSA</small><div id="build-buttons" class="tower-buttons"></div><div id="tower-actions" hidden><button id="upgrade" class="secondary">Mejorar</button><button id="sell" class="quiet">Vender</button></div><div class="plot-select" id="plots" aria-label="Seleccionar parcela"></div></div><div class="hero-controls"><button id="hero-move" class="secondary">◎ Mover a Lyra</button><button id="pulse" class="secondary">✧ Pulso de luz <kbd>Q</kbd></button></div><button id="next-wave" class="primary">Comenzar oleada <span>→</span></button></div>
- <div class="game-foot"><span>TOCA UNA PARCELA PARA CONSTRUIR · TOCA EL SUELO PARA MOVER A LYRA</span><button id="retire" class="quiet">Volver al refugio</button></div>
+
+<section id="game" class="game" hidden aria-label="Partida">
+  <div class="hud plate">
+    <div class="hud__wave"><small>Oleada</small><b id="wave-label">0 / 12</b><span id="pips"></span></div>
+    <div class="hud__stats">
+      <span class="stat stat--life" title="Vida de la semilla"><span data-icon="life" data-size="22"></span><b id="health">20</b><span class="sr-only"> de vida</span></span>
+      <span class="stat stat--light" title="Luz para plantar defensas"><span data-icon="lantern" data-size="22"></span><b id="gold">230</b><span class="sr-only"> de luz</span></span>
+    </div>
+    <div class="hud__buttons">
+      <button id="pause" class="tool" type="button" aria-label="Pausar partida"></button>
+      <button id="speed" class="tool" type="button" aria-label="Cambiar velocidad">1×</button>
+    </div>
+  </div>
+  <div class="play">
+    <div class="field" id="field">
+      <canvas id="arena" tabindex="0" aria-label="Campo de batalla. Toca una parcela para plantar una defensa y el suelo para mover a Lyra. Con teclado: números para parcelas, A, R y E para construir, flechas para mover a Lyra, Q para el pulso."></canvas>
+      <div id="banner" class="banner" aria-live="polite"></div>
+      <div id="coach" class="coach" role="status"></div>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <div id="veil" class="veil" hidden></div>
+    </div>
+    <div class="dock plate">
+      <small id="selection-label" class="kicker">Toca una parcela</small>
+      <div id="build-buttons" class="packets"></div>
+      <div id="tower-actions" class="tower-actions" hidden>
+        <button id="upgrade" class="btn btn--paper" type="button">Mejorar</button>
+        <button id="sell" class="btn btn--ghost" type="button">Vender</button>
+      </div>
+      <div class="dock__row">
+        <button id="pulse" class="btn btn--paper btn--stack" type="button" aria-label="Pulso de luz (tecla Q)"><span data-icon="pulse" data-size="22"></span><span id="pulse-label">Pulso</span></button>
+        <button id="hero-move" class="btn btn--paper btn--stack" type="button" aria-pressed="false" aria-label="Mover a Lyra"><span data-icon="move" data-size="22"></span><span>Lyra</span></button>
+        <button id="next-wave" class="btn btn--lantern" type="button">Comenzar oleada</button>
+      </div>
+      <details id="plots-wrap" class="plots-wrap"><summary>Elegir parcela con botones</summary><div id="plots" class="plots"></div></details>
+    </div>
+  </div>
 </section>
 </main>
-<footer><span>✧ LUMEN</span><span>Un pequeño bosque. Una gran resistencia.</span><span>PROTOTIPO 0.1</span></footer>
-<dialog id="modal"><div id="modal-content"></div><button id="modal-close" class="primary">Continuar</button></dialog>
+<footer id="footer"><span>Lumen</span><span>Un pequeño bosque. Una gran resistencia.</span><span id="version">Versión 0.2.0</span></footer>
+</div>
+<dialog id="modal" aria-labelledby="modal-title"><div id="modal-content" class="sheet"></div><button id="modal-close" class="btn btn--lantern" type="button">Continuar</button></dialog>
 <script type="module" src="src/app.mjs"></script>
-</body></html>
+</body>
+</html>

@@ -9,6 +9,10 @@ export const TOWERS = {
   frost: {name:'Flor de rocío', short:'ROCÍO', icon:'❋', cost:85, damage:7, range:140, interval:0.9, color:'#7fe8e0', description:'Ralentiza 50% durante 1,6 s'},
   spore: {name:'Hongo astral', short:'ESPORA', icon:'◈', cost:110, damage:26, range:150, interval:1.8, splash:64, color:'#bd9dff', description:'Daño de área · grupos cercanos'},
 };
+// Equilibrio. `hpGrowth`: cuánto crece la vida de cada enemigo por oleada (vida × (1 + hpGrowth × (oleada − 1))).
+// Pasó de 0,14 a 0,22 tras medir que con 0,14 cuatro torres a nivel 2 ganaban sin perder una vida y con más de
+// 2 000 de luz sin gastar (ver docs/diseno.md y tests/balance.test.mjs). Es una hipótesis hasta probar con jugadores.
+export const BALANCE = Object.freeze({ hpGrowth: 0.22 });
 export const ENEMIES = {
   mite: {name:'Errante', hp:38, speed:48, reward:7, damage:1, radius:11, color:'#ed9f96'},
   runner: {name:'Centella', hp:28, speed:85, reward:8, damage:1, radius:9, color:'#edce82'},

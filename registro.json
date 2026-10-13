@@ -1,7 +1,7 @@
 {
   "studio": "ODPGAMES",
   "site": "https://osvaldodjesus.github.io/",
-  "generatedAt": "2026-10-13T06:09:21.021Z",
+  "generatedAt": "2026-10-13T06:18:28.289Z",
   "hashing": "SHA-256; archivos de texto con saltos de línea LF; huella = sha256 de las líneas \"ruta<TAB>hash\" ordenadas por ruta",
   "games": [
     {
@@ -394,40 +394,55 @@
     {
       "slug": "lumen",
       "title": "Lumen: Guardianes del Bosque",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "firstCommit": {
         "hash": "860f5f7893891994585d2027fd69c1468d4e752f",
         "date": "2026-09-30"
       },
-      "fingerprint": "c0214fe19a03c02b92e511acda865bc01d71527676ec298a2952e1f6a3b23654",
+      "fingerprint": "1bcd284b4674f59ca6be2d33a0846f21533ec8b4c3da532d08cd2cd261e36f4a",
       "files": {
-        "assets/lumen.ico": "dd34625ced6544bb37a156d8510efa325f370fe7630f1e74b8c6a49a60e3e479",
-        "icon.svg": "c004c0b4df713861de1b9591e3f16e65986ce4c67f3f973d50d35babd54ae66f",
-        "index.html": "6401b9081fe181e6417e5e29dea69b2ebf0c393c4251ca10cb15c1d70cdba9a5",
-        "src/app.mjs": "02ec77a30e393c9af01c681a1ef5a344cddd67d89fc07ccb38b162062c3c902e",
-        "src/audio.mjs": "6cbc01145e8c8340283d0fa1db7e85f942405fc06a2e43979dc5ff455f8a03b5",
-        "src/content.mjs": "76e465c65d5322277163361d43d34baf9382acffb11b2c235749e596d814537c",
-        "src/engine.mjs": "ef05780425c8c0a941e72193e7448db69b1a2bf6816fed93d0cee39a8564e42b",
-        "src/profile.mjs": "bf04c57640c1897e34e657d73a6355f7492d9b04f307f39a838f5c3e9964f00f",
-        "src/render.mjs": "c7dccfeae7e750d16b3ba30feccd5038eedae87ee5c067126509d9558e2eeb89",
-        "style.css": "873fa81f39c8c9fa3e59b38b5bc3c19c563089af55d7657c4dc8449dc5f0efcb"
+        "assets/lumen.ico": "704f016154dab73d01b44a861c3bf0d12e8076f72ab264d424502b0bb1bdca7d",
+        "icon.svg": "5768cfdc68d061d29732b272569abe61c65c4360ac6515b28ba1accd55a2719a",
+        "index.html": "4b64bd9c510dba7ff4bc8ee43a54c016df5cef6c6aec753daaed6a431385b2bd",
+        "src/app.mjs": "ef9c62f1addb711a98a996196c41bb1b28fdc363b97148aeba9699665511a72a",
+        "src/audio.mjs": "0148a43fc13365e0407f1b2e02948af00b21054419a88075a1ba223d5313e70d",
+        "src/coach.mjs": "1db1b00ead452d1fc5a759ab74e515e650ecf193e86195207b77ab2b0a209343",
+        "src/content.mjs": "56979f66134672a45cdc25bd11ae8e034e3e655609d8f3b2106a95c21ce4e71c",
+        "src/engine.mjs": "9d1726773716d14b11a0ae76013a29e39e6112ea0646c556812bbb5a2571b627",
+        "src/fx.mjs": "210c5c99f50f3daa057b49fbb0cf29ea5c3c4614eeef0abcf99b1ffe60969e14",
+        "src/icons.mjs": "16d42308ab7a373ca02e200150e1f94e0fa9727b7376c97ebeeb4bbef7b8ff7a",
+        "src/profile.mjs": "7d4390890d27767b22904453141c6bd40b6c107dec3df0431d8ac57526140644",
+        "src/render.mjs": "116c86034ddef21c523d0e2d3d55c6c802da3515a6e600a8241047c1f2d454cf",
+        "src/store.mjs": "1925ab084ef6249c0bf897bf2cc54043efe044bc3d8304f26720120532f63413",
+        "src/ui.mjs": "84a9ff31560e8fceae6df933ca137c105c1fd2141fa1093270eb3964cc5659df",
+        "src/view.mjs": "f8797a99d2fbb018659029723c9df6ba1c39a0db57bc6ed5c5ed53ac4018ee7a",
+        "style.css": "b337df318b2f6e18869f6e03073eb590962334514a1c68e0b5b4dffea6882a95"
       }
     },
     {
       "slug": "pulso-orbital",
       "title": "Pulso Orbital",
-      "version": "0.3.1",
+      "version": "0.4.0",
       "firstCommit": {
         "hash": "a709315515584464efe9588bf29a621207f4ac7f",
         "date": "2026-10-08"
       },
-      "fingerprint": "daa7c296fccad3f19b1163821c5d32d131f0498825b2e3c6d1c742c965825995",
+      "fingerprint": "58d36b5be45f5b4d39675530ae7e390e255ce2813b36d4c8054ec6b7eb89b16f",
       "files": {
-        "assets/logo.svg": "0635b7e155b88cd72c00e718637cd1ef4daecd3e6c407483479dde763a79fc07",
-        "engine.mjs": "d5c2f0c9f9d846fcad80de82376eda84e25093d23cae9492abb4c0e77af025a1",
-        "index.html": "6882a9046f40b788baf1ecd80eeabbe63377e26d13eb5baf872a29c8f02190dc",
-        "main.mjs": "8d7813cb21a7f98844612da91b8cf28e70bbcc519166a5110dfdf421d7ea3784",
-        "style.css": "ad503f9f4f8b9fc3a0b0984fd3b45f4d0c39c29ca666ef241cb54dca2c5a7faa"
+        "assets/logo.svg": "95e4a928da05cd87e4c3de889b546a57d2a707928d5bcdc2db1acd9f43649b8a",
+        "audio.mjs": "22dafd3beda8de5671613be28f104562f200388a8d01847e56c71e2ac6f77f29",
+        "coach.mjs": "c2e0ac8079f510d5aca27d9c415967b8e961b5ee06b243489985171543a69514",
+        "engine.mjs": "c3f8903fbb9d14c63d1bce33a143aa0773bd82904080443355025c61a81b3059",
+        "fx.mjs": "5534d79b8166ef7338c0c75ff00e2f421a7975986e7b3ae6385e4bd51be46d59",
+        "icons.mjs": "ae1b73206e27b632539ac15a05a0cbbe3db67429d2e247b4ccedcb5187c11827",
+        "index.html": "9f7ba4196dbe046ae0565cb68530b29228e416c5f6e120730d3653257ac54976",
+        "main.mjs": "59e0fb1d409adaa0805bc8e4a41a90644262295712acd1109d6f4a16242ef763",
+        "render.mjs": "37ded80bb1725df536e16039b402e1be9452abb9554df743994ad332565914b8",
+        "segments.mjs": "95a781b1e7f755530ef9cf2aea59f465ca4083d916456c1e9c237719e4da603a",
+        "storage.mjs": "07c4bc283c95d9ace06f53239e80f7f7e2da95a8af8d141ec75f859139c0db0d",
+        "style.css": "040f58034c6c0a435acb1bc079d6ac86cb5ddfd8fbda19cb4059e4f60857988e",
+        "ui.mjs": "baf5f20e67e8ade667555d82390656f6279986541da2b6c7c8290ffd9fd280d7",
+        "wordmark.mjs": "87b9ade4e0b824842787e64c8ffc285a888edc895a693aac16647c718166b1b7"
       }
     },
     {
