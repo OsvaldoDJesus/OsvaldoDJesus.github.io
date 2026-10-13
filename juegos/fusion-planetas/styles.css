@@ -1,0 +1,12 @@
+:root {
+  --kit-accent: #5e60ce;
+  --kit-accent-fg: #fff;
+  --kit-panel: #161a33;
+  --kit-fg: #fff;
+  --kit-muted: #2e3358;
+  --kit-radius: 16px;
+  --kit-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+html, body { margin: 0; height: 100%; background: #090a1f; overflow: hidden; overscroll-behavior: none; }
+body { font-family: var(--kit-font); -webkit-tap-highlight-color: transparent; }
+#game { position: fixed; inset: 0; }

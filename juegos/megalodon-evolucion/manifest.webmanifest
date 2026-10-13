@@ -1,0 +1,10 @@
+{
+  "name": "Megalodón: Evolución",
+  "short_name": "Megalodón: Evolución",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#0f1018",
+  "theme_color": "#1d1f2b",
+  "icons": []
+}

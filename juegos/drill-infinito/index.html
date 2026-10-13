@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#141c28">
+  <meta name="description" content="Perfora, recoge y evoluciona. Empieza con un taladro manual, gana la automatización y explora ocho mundos de pixelart con 300 evoluciones.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Drill Infinito · Una mina sin fondo</title>
+</head>
+<body>
+  <a href="#stage" class="skip-link">Ir al juego</a>
+  <div class="app-shell">
+    <header class="topbar"><a class="brand" href="./" aria-label="Drill Infinito, inicio"><span class="brand-pixel" aria-hidden="true">▼</span><span>DRILL<span class="brand-tag">INFINITO</span></span></a><div class="wallet"><span class="level-pill">NV <strong id="header-level">1</strong></span><span class="coin-pill"><span aria-hidden="true">◆</span> <strong id="header-coins">0</strong><span class="sr-only"> monedas</span></span><button id="settings-open" class="icon-button" aria-label="Abrir ajustes">⚙</button></div></header>
+    <div id="save-warning" class="save-warning" role="alert" hidden></div>
+    <main id="stage" tabindex="-1"></main>
+    <nav class="dock" aria-label="Navegación principal"><button data-tab="mine" aria-current="page"><span aria-hidden="true">▼</span> Mina</button><button data-tab="upgrades"><span aria-hidden="true">»</span> Mejoras</button><button data-tab="hangar"><span aria-hidden="true">⚙</span> Taladros</button><button data-tab="progress"><span aria-hidden="true">✦</span> Expedición</button></nav>
+    <footer class="footer"><span>PERFORA. RECOGE. EVOLUCIONA.</span><span>PIXEL MINING / 0.3</span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-heading"><h2 id="settings-title">AJUSTES</h2><button class="icon-button" data-close="settings-dialog" aria-label="Cerrar ajustes">×</button></div>
+    <label class="setting-row"><span>Sonidos del taladro</span><input id="sound-toggle" type="checkbox"></label><label class="setting-row"><span>Reducir movimiento y destellos</span><input id="motion-toggle" type="checkbox"></label>
+    <div class="settings-section"><h3>GUARDADO LOCAL</h3><p>El progreso se guarda en este dispositivo. Haz un respaldo antes de borrar los datos.</p><button id="export-save" class="secondary full">Descargar respaldo</button><label class="file-button secondary full" for="import-save">Restaurar respaldo<input id="import-save" type="file" accept=".json,application/json"></label><button id="export-original" class="secondary full" hidden>Descargar guardado original</button><button id="replace-corrupt" class="secondary full" hidden>Reemplazar por esta partida</button><button id="new-expedition" class="secondary full">Nueva expedición</button><button id="restore-expedition" class="secondary full">Recuperar expedición anterior</button><p id="import-status" role="status"></p></div>
+    <div class="settings-section"><h3>CÓMO FUNCIONA</h3><p>Empiezas manualmente. Mantén PERFORAR y toca los minerales que caen para recoger y cobrar. La broca y el motor aumentan el trabajo de cada golpe.</p><p>Con broca rango 2, 4 metros y 65 monedas puedes instalar el piloto automático. El recolector se desbloquea a 6 metros y recoge por ti. El imán recoge todo; la sobrecarga triplica la perforación; la onda sísmica rompe vetas profundas.</p><p>El piloto trabaja al cerrar hasta 2 horas; la batería amplía la reserva hasta 8. Sin recolector, el botín espera en el suelo. Pausar también detiene la reserva. Teclado: mantén Espacio para perforar, P para pausar.</p></div>
+    <div class="settings-section"><h3>PRUEBAS DE TU SESIÓN</h3><p>Puedes exportar golpes, recogidas, mejoras y tiempos para revisar el ritmo. Este registro permanece en tu dispositivo.</p><button id="export-metrics" class="secondary full">Descargar registro de sesión</button></div><div class="settings-section"><h3>LLEVAR A MÓVIL</h3><p>En el navegador: Instalar aplicación o Añadir a pantalla de inicio. En iPhone: Compartir → Añadir a pantalla de inicio.</p><button id="install-app" class="secondary full" hidden>Instalar aplicación</button></div><p class="version-label">DRILL INFINITO / 0.3.0</p>
+  </dialog>
+  <dialog id="offline-dialog" aria-labelledby="offline-title"><div class="offline-art" aria-hidden="true">▼<span>◆ ◆ ◆</span></div><p class="eyebrow">EL TURNO CONTINUÓ</p><h2 id="offline-title">Tu taladro siguió trabajando.</h2><p id="offline-time" class="muted"></p><div id="offline-rewards" class="offline-rewards"></div><p class="muted">Las ganancias ya están guardadas.</p><button class="primary full" data-close="offline-dialog">Volver a la mina →</button></dialog>
+  <dialog id="new-dialog" aria-labelledby="new-title"><h2 id="new-title">Volver a la primera veta</h2><p>Empezarás con el taladro manual y cero monedas. La expedición actual se conservará como anterior y podrás recuperarla desde Ajustes.</p><button id="confirm-new" class="primary full">Guardar anterior y empezar</button><button class="secondary full" data-close="new-dialog">Seguir en esta mina</button></dialog>
+  <noscript>Activa JavaScript para jugar a Drill Infinito.</noscript><script type="module" src="./app.mjs"></script>
+</body>
+</html>

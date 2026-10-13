@@ -1,0 +1,14 @@
+:root {
+  --kit-accent: #ff5d8f;
+  --kit-accent-fg: #fff;
+  --kit-panel: #fff0f6;
+  --kit-fg: #5a1e3a;
+  --kit-muted: #f3c6da;
+  --kit-radius: 18px;
+  --kit-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+html, body { margin: 0; height: 100%; background: #ffd6e8; overflow: hidden; overscroll-behavior: none; }
+body { font-family: var(--kit-font); -webkit-tap-highlight-color: transparent; }
+#game { position: fixed; inset: 0; }
+.kit-overlay .kit-btn.secondary { color: #5a1e3a; }
+.kit-overlay .kit-toast { background: rgba(90, 30, 58, 0.9); }
